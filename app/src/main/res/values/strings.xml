@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CustomButtonApp</string>
+    <string name="tv1">Custom Button And Dialog Box</string>
+    <string name="dia1">Click to show \n default dialog box.</string>
+    <string name="dia2">Click to show \n custom dialog box.</string>
+    <string name="dia3">Click to show \n super dialog box.</string>
+</resources>
