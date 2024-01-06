@@ -3,6 +3,9 @@ package com.coding.custombuttonapp
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -21,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btn2.setOnClickListener {
             showCustomDialog()
+        }
+        binding.btn3.setOnClickListener {
+            showCustomDialog1()
         }
 
 
@@ -46,6 +52,46 @@ class MainActivity : AppCompatActivity() {
             dialog.dismiss()
         }
 
+        // Show the dialog
+        dialog.show()
+    }
+    private fun showCustomDialog1() {
+        // Create a Dialog instance
+        val dialog = Dialog(this)
+
+        // Set the custom dialog layout
+        dialog.setContentView(R.layout.custom_dialogbox_1)
+
+        // Find the OK button in the dialog layout
+        val dialogButtonOK: Button = dialog.findViewById(R.id.btnOK)
+        val dialogButtonCancel: Button = dialog.findViewById(R.id.btnCancel)
+
+        // Set a click listener for the OK button
+        dialogButtonOK.setOnClickListener {
+            t.show()
+        }
+        dialogButtonCancel.setOnClickListener {
+            // Close the dialog when the OK button is clicked
+            dialog.dismiss()
+        }
+
+        // Set the position of the dialog
+        val window: Window? = dialog.window
+        window?.let {
+            val layoutParams = WindowManager.LayoutParams()
+            // Set background to transparent
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+            // Set the gravity to control the position of the dialog
+            layoutParams.gravity = Gravity.BOTTOM // Change this to your desired position
+
+
+            // Adjust the layout parameters to match the content, not fill the screen
+            layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT
+            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+
+            it.attributes = layoutParams
+        }
         // Show the dialog
         dialog.show()
     }

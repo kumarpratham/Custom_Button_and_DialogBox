@@ -4,4 +4,7 @@
     <string name="dia1">Click to show \n default dialog box.</string>
     <string name="dia2">Click to show \n custom dialog box.</string>
     <string name="dia3">Click to show \n super dialog box.</string>
+    <string name="tv2">This is the custom dialog box with custom background shape and border.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>
